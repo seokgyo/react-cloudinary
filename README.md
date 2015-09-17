@@ -13,7 +13,7 @@ Simple wrapper around [cloudinary_npm](https://github.com/cloudinary/cloudinary_
     cloudinaryConfig({ cloud_name: 'xxxx' });
 
     const imagePublicId = 'imagePublicId';
-    <CloudinaryImage publicId={publicId} options={{ width: 300, height: 300 }} />
+    <CloudinaryImage publicId={imagePublicId} options={{ width: 300, height: 300 }} />
 
     const videoPublicId = 'videoPublicId';
     <CloudinaryImage publicId={videoPublicId} options={{ width: 300, height: 300, controles: true, preload: 'auto' }} />
