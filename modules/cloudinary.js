@@ -1,6 +1,4 @@
 // NOTE: This is copied from 'cloudinary' npm to support universal rendering.
-'use strict';
-
 var _ = require('lodash');
 var cloudinary = module.exports;
 
@@ -93,7 +91,7 @@ exports.video = function (public_id, options) {
     for (var i = 0; i < source_types.length; i++) {
       source_type = source_types[i];
       transformation = source_transformation[source_type] || {};
-      src = cloudinary.utils.url(source + "." + source_type, _.extend({ resource_type: 'video' }, _.cloneDeep(options), _.cloneDeep(transformation)));
+      src = cloudinary.utils.url(source + "." + source_type, _.extend({resource_type: 'video'}, _.cloneDeep(options), _.cloneDeep(transformation)));
       video_type = source_type === 'ogv' ? 'ogg' : source_type;
       mime_type = "video/" + video_type;
       html = html + '<source ' + cloudinary.utils.html_attrs({
