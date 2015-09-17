@@ -3,13 +3,14 @@ import { image } from './cloudinary';
 
 export default class CloudinaryImage extends Component {
   render() {
-    const { publicId } = this.props;
+    const { publicId, options } = this.props;
     return (
-      <div dangerouslySetInnerHTML={{__html: image(publicId)}}></div>
+      <div dangerouslySetInnerHTML={{__html: image(publicId, options)}}></div>
     );
   }
 }
 
 CloudinaryImage.propTypes = {
   publicId: PropTypes.string.isRequired,
+  options: PropTypes.object,
 };
