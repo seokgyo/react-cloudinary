@@ -1,0 +1,33 @@
+{
+  "name": "react-cloudinary",
+  "version": "0.0.1",
+  "description": "react components to render cloudinary image and video.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint -c .eslintrc .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://seokgyo@github.com/seokgyo/react-cloudinary.git"
+  },
+  "keywords": [
+    "react",
+    "cloudinary"
+  ],
+  "author": "seokgyo@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seokgyo/react-cloudinary/issues"
+  },
+  "homepage": "https://github.com/seokgyo/react-cloudinary#readme",
+  "dependencies": {
+    "cloudinary": "^1.2.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.2",
+    "eslint": "^1.4.3",
+    "eslint-config-airbnb": "0.0.8",
+    "eslint-plugin-react": "^3.4.1"
+  }
+}
