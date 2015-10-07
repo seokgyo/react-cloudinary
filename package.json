@@ -1,6 +1,6 @@
 {
   "name": "react-cloudinary",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "react components to render cloudinary image and video.",
   "main": "lib/index",
   "scripts": {
@@ -25,7 +25,7 @@
   "homepage": "https://github.com/seokgyo/react-cloudinary#readme",
   "dependencies": {
     "cloudinary": "^1.2.4",
-    "react": "^0.13.3"
+    "react": "^0.14.0-rc1"
   },
   "devDependencies": {
     "babel": "^5.8.23",
