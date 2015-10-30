@@ -1,6 +1,6 @@
 export {
   config as cloudinaryConfig,
-  url as cloudinaryUrl,
+  utils as cloudinaryUtils,
 } from './cloudinary';
 
 export CloudinaryImage from './CloudinaryImage';
