@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import video from './video';
 
 export default class CloudinaryVideo extends Component {
   render() {
