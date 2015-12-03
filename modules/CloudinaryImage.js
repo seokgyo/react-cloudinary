@@ -4,7 +4,7 @@ import cloudinaryUrl from './cloudinaryUrl';
 
 export default class CloudinaryImage extends Component {
   render() {
-    const { publicId, options } = this.props;
+    const { publicId, options = {} } = this.props;
     if ('html_width' in options) options.width = utils.option_consume(options, 'html_width');
     if ('html_height' in options) options.height = utils.option_consume(options, 'html_height');
 
