@@ -9,7 +9,7 @@ export default class CloudinaryImage extends Component {
     if ('html_height' in options) options.height = utils.option_consume(options, 'html_height');
 
     return (
-      <img src={cloudinaryUrl(publicId, options)} {...utils.html_attrs(options)}/>
+      <img src={cloudinaryUrl(publicId, options)} {...utils.html_attrs(options)} {...this.props}/>
     );
   }
 }
