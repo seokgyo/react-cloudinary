@@ -1,35 +1,7 @@
-// NOTE: This is copied from 'cloudinary' npm to support universal rendering.
-'use strict';
+const _ = require('lodash');
 
-var _ = require('lodash');
-var cloudinary = module.exports;
-
-exports.utils = require('cloudinary/lib/utils');
-exports.config = require('cloudinary/lib/config');
-
-exports.image = function (source, options) {
-  var responsive, html, current_class, classes, hidpi;
-  options = _.extend({}, options);
-  source = cloudinary.utils.url(source, options);
-  if ("html_width" in options) options["width"] = cloudinary.utils.option_consume(options, "html_width");
-  if ("html_height" in options) options["height"] = cloudinary.utils.option_consume(options, "html_height");
-
-  responsive = cloudinary.utils.option_consume(options, "responsive"), hidpi = cloudinary.utils.option_consume(options, "hidpi");
-  if (responsive || hidpi) {
-    options["data-src"] = source;
-    classes = [responsive ? "cld-responsive" : "cld-hidpi"];
-    current_class = cloudinary.utils.option_consume(options, "class");
-    if (current_class) classes.push(current_class);
-    options["class"] = classes.join(" ");
-    source = cloudinary.utils.option_consume(options, "responsive_placeholder", cloudinary.config().responsive_placeholder);
-    if (source == "blank") {
-      source = cloudinary.BLANK;
-    }
-  }
-  html = "<img ";
-  if (source) html += "src='" + source + "' ";
-  html += cloudinary.utils.html_attrs(options) + "/>";
-  return html;
+const cloudinary = {
+  utils: require('cloudinary/lib/utils'),
 };
 
 /**
@@ -93,7 +65,7 @@ exports.video = function (public_id, options) {
     for (var i = 0; i < source_types.length; i++) {
       source_type = source_types[i];
       transformation = source_transformation[source_type] || {};
-      src = cloudinary.utils.url(source + "." + source_type, _.extend({ resource_type: 'video' }, _.cloneDeep(options), _.cloneDeep(transformation)));
+      src = cloudinary.utils.url(source + "." + source_type, _.extend({resource_type: 'video'}, _.cloneDeep(options), _.cloneDeep(transformation)));
       video_type = source_type === 'ogv' ? 'ogg' : source_type;
       mime_type = "video/" + video_type;
       html = html + '<source ' + cloudinary.utils.html_attrs({
