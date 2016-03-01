@@ -2,16 +2,16 @@ import React, { Component, PropTypes } from 'react';
 const cloudinary = require('./cloudinary');
 
 export default class CloudinaryImage extends Component {
+  static propTypes = {
+    publicId: PropTypes.string.isRequired,
+    options: PropTypes.object,
+  }
+
   render() {
-    const { publicId, options } = this.props;
+    const { publicId, options, ...other } = this.props;
 
     return (
-      <img src={cloudinary.url(publicId, options)} />
+      <img {...other} src={cloudinary.url(publicId, options)} />
     );
   }
 }
-
-CloudinaryImage.propTypes = {
-  publicId: PropTypes.string.isRequired,
-  options: PropTypes.object,
-};
