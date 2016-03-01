@@ -1,14 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-const cloudinary = require('./cloudinary');
+import video from './video';
 
 export default class CloudinaryVideo extends Component {
-  componentDidMount() {
-    const { publicId, options } = this.props;
-    this.refs.video.insertBefore(cloudinary.video(publicId, options));
-  }
   render() {
+    const { publicId, options } = this.props;
     return (
-      <div ref="video"></div>
+      <div dangerouslySetInnerHTML={{__html: video(publicId, options)}}></div>
     );
   }
 }

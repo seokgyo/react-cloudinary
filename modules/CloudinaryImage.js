@@ -1,13 +1,17 @@
 import React, { Component, PropTypes } from 'react';
-const cloudinary = require('./cloudinary');
+import utils from 'cloudinary/lib/utils';
+import cloudinaryUrl from './cloudinaryUrl';
+import assign from 'lodash/object/assign';
 
-class CloudinaryImage extends Component {
+export default class CloudinaryImage extends Component {
   render() {
     const { publicId } = this.props;
-    const options = Object.assign({}, this.props.options);
+    const options = assign({}, this.props.options);
+    if ('html_width' in options) options.width = utils.option_consume(options, 'html_width');
+    if ('html_height' in options) options.height = utils.option_consume(options, 'html_height');
 
     return (
-      <img src={cloudinary.url(publicId, options)} />
+      <img src={cloudinaryUrl(publicId, options)} {...utils.html_attrs(options)} {...this.props}/>
     );
   }
 }
