@@ -1,6 +1,7 @@
-export cloudinaryConfig from 'cloudinary/lib/config';
-export cloudinaryUtils from 'cloudinary/lib/utils';
+const cloudinary = require('./cloudinary');
 
-export cloudinaryUrl from './cloudinaryUrl';
-export CloudinaryImage from './CloudinaryImage';
-export CloudinaryVideo from './CloudinaryVideo';
+exports.cloudinaryConfig = (config) => cloudinary.config(config);
+exports.cloudinaryUrl = (publicId, options) => cloudinary.url(publicId, options);
+
+exports.CloudinaryImage = require('./CloudinaryImage');
+exports.CloudinaryVideo = require('./CloudinaryVideo');
