@@ -10,5 +10,3 @@ export function cloudinaryUrl(publicId, options) {
 
 export CloudinaryImage from './CloudinaryImage';
 export CloudinaryVideo from './CloudinaryVideo';
-
-export CloudinaryImageNative from './CloudinaryImageNative';

@@ -1,4 +1,5 @@
-import React, { Component, Image, PropTypes } from 'react-native';
+import React, { Component, PropTypes } from 'react';
+import { Image } from 'react-native';
 const cloudinary = require('./cloudinary');
 
 export default class CloudinaryImage extends Component {
