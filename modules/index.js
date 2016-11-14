@@ -5,7 +5,7 @@ export function cloudinaryConfig(config) {
 }
 
 export function cloudinaryUrl(publicId, options) {
-  cloudinary.url(publicId, options);
+  return cloudinary.url(publicId, options);
 }
 
 export CloudinaryImage from './CloudinaryImage';
