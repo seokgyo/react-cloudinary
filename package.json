@@ -35,6 +35,7 @@
     "eslint": "^1.4.3",
     "eslint-config-airbnb": "0.0.8",
     "eslint-plugin-react": "^3.4.1",
-    "react": "^15.1.0"
+    "prop-types": "^15.6.0",
+    "react": "^15.6.2"
   }
 }
